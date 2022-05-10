@@ -8,16 +8,21 @@ import {
   Image,
   Dimensions,
   TextInput,
+ 
 } from 'react-native';
+
+import WebView from 'react-native-webview';
 import React from 'react';
 import Icons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Iconm from 'react-native-vector-icons/MaterialIcons';
 
 import Iconsf from 'react-native-vector-icons/FontAwesome5';
 import Login from './login';
-import NativeHeadlessJsTaskSupport from 'react-native/Libraries/ReactNative/NativeHeadlessJsTaskSupport';
+
 import {FlatList} from 'react-native-gesture-handler';
 // import DATA from '../data/DATA';
+
+
 const {height, width} = Dimensions.get('window');
 const headerHeight = 100;
 const Fhome = ({navigation}) => {
@@ -116,10 +121,15 @@ const Fhome = ({navigation}) => {
   ];
 
   return (
+
     <SafeAreaView>
       <ScrollView  stickyHeaderIndices={[0]} 
       >
+      <View>
         <Login />
+
+      </View>
+
         <View style={{backgroundColor: 'black', height: height * 1}}>
           {/* <ScrollView>  </ScrollView>         */}
           <View
@@ -268,7 +278,7 @@ const Fhome = ({navigation}) => {
             />
           </View>
 
-          <View style={{height: height / 1, backgroundColor: '#242527'}}>
+          <View style={{height: height *4, backgroundColor: '#242527'}}>
             <FlatList
 
               nestedScrollEnabled={true}
@@ -407,13 +417,17 @@ const Fhome = ({navigation}) => {
           
           
         </View>
-        {/* <View style={{height:height*0.6, backgroundColor:'red'}}>
-<Text>
-  hello
-</Text>
-</View> */}
+        <View style={{height:height*0.6, backgroundColor:'red'}}>
+        <WebView
+        source={{
+          uri: 'https://github.com/facebook/react-native'
+        }}
+        style={{ marginTop: 20 }}
+      />
+</View>
       </ScrollView>
     </SafeAreaView>
+
   );
 };
 
