@@ -8,7 +8,6 @@ import {
   Image,
   Dimensions,
   TextInput,
- 
 } from 'react-native';
 
 import WebView from 'react-native-webview';
@@ -21,7 +20,6 @@ import Login from './login';
 
 import {FlatList} from 'react-native-gesture-handler';
 // import DATA from '../data/DATA';
-
 
 const {height, width} = Dimensions.get('window');
 const headerHeight = 100;
@@ -121,14 +119,11 @@ const Fhome = ({navigation}) => {
   ];
 
   return (
-
     <SafeAreaView>
-      <ScrollView  stickyHeaderIndices={[0]} 
-      >
-      <View>
-        <Login />
-
-      </View>
+      <ScrollView stickyHeaderIndices={[0]}>
+        <View>
+          <Login />
+        </View>
 
         <View style={{backgroundColor: 'black', height: height * 1}}>
           {/* <ScrollView>  </ScrollView>         */}
@@ -228,7 +223,6 @@ const Fhome = ({navigation}) => {
               horizontal={true}
               data={DATA}
               keyExtractor={item => item.id}
-              
               renderItem={({item}) => {
                 return (
                   <View style={{top: 20}}>
@@ -278,9 +272,8 @@ const Fhome = ({navigation}) => {
             />
           </View>
 
-          <View style={{height: height *4, backgroundColor: '#242527'}}>
+          <View style={{height: height * 4, backgroundColor: '#242527'}}>
             <FlatList
-
               nestedScrollEnabled={true}
               contentContainerStyle={{paddingBottom: headerHeight}}
               keyExtractor={item => item.id}
@@ -412,29 +405,25 @@ const Fhome = ({navigation}) => {
                 );
               }}
             />
-          
           </View>
-          
-          
         </View>
-        <View style={{height:height*0.6, backgroundColor:'red'}}>
-        <WebView
-        source={{
-          uri: 'https://github.com/facebook/react-native'
-        }}
-        style={{ marginTop: 20 }}
-      />
-</View>
+        <View style={{height: height * 0.6, backgroundColor: 'red'}}>
+          <WebView
+            source={{
+              uri: 'https://github.com/facebook/react-native',
+            }}
+            style={{marginTop: 20}}
+          />
+        </View>
       </ScrollView>
     </SafeAreaView>
-
   );
 };
 
 export default Fhome;
 
 const styles = StyleSheet.create({
-  mg:{
-    marginTop:12
-  }
+  mg: {
+    marginTop: 12,
+  },
 });
